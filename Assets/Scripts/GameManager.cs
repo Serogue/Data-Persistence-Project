@@ -99,5 +99,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void ResetHiScore()
+    {
+        HiScore toWrite = new HiScore();
+        toWrite.score = 0;
+        toWrite.name = "";
+        toWrite.hiName = "";
+
+        string path = Application.persistentDataPath + "/savefile.json";
+
+        string json = JsonUtility.ToJson(toWrite);
+
+        File.WriteAllText(path, json);
+    }
+
 
 }

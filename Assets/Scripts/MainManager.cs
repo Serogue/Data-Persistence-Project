@@ -83,6 +83,8 @@ public class MainManager : MonoBehaviour
             GameManager.instance.hiPlayerName = GameManager.instance.playerName;
             GameManager.instance.hiScore = m_Points;
             GameManager.instance.SaveHiScore();
+
+            bestScoreText.text = "Best Score : " + GameManager.instance.hiPlayerName + " : " + GameManager.instance.hiScore;
         }
     }
 }
